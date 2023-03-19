@@ -1,0 +1,29 @@
+CREATE KEYSPACE sakthi_masala WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 2};
+cqlsh> use sakthi_masala;
+cqlsh:sakthi_masala> CREATE TABLE powders (
+                 ... regno text PRIMARY KEY,
+                 ... name text,
+                 ... mrp int,
+                 ... expdate int,
+                 ... orgn text
+                 ... );
+cqlsh:sakthi_masala> INSERT INTO powders (regno,name,mrp,expdate,orgn) VALUES ('CPDEXXII','MUTTON MASALA',84,2023,'INDIA');
+cqlsh:sakthi_masala> INSERT INTO powders (regno,name,mrp,expdate,orgn) VALUES ('CPDEJJII','CHICKEN MASALA',65,2023,'INDIA');
+cqlsh:sakthi_masala> INSERT INTO powders (regno,name,mrp,expdate,orgn) VALUES ('CPDEGGII','BRIYANI MASALA',52,2022,'INDIA');
+cqlsh:sakthi_masala> INSERT INTO powders (regno,name,mrp,expdate,orgn) VALUES ('CPDESSII','EGG KURUMA MASALA',48,2024,'INDIA');
+cqlsh:sakthi_masala> INSERT INTO powders (regno,name,mrp,expdate,orgn) VALUES ('CPDEKKII','FISH CURRY MASALA',66,2022,'INDIA');
+cqlsh:sakthi_masala> INSERT INTO powders (regno,name,mrp,expdate,orgn) VALUES ('CPDERRII','FISH FRY MASALA',33,2026,'INDIA');
+cqlsh:sakthi_masala> INSERT INTO powders (regno,name,mrp,expdate,orgn) VALUES ('CPDELLII','CHILLI CHICKEN 65',77,2025,'INDIA');
+cqlsh:sakthi_masala> select * from powders;
+
+ regno    | expdate | mrp | name              | orgn
+----------+---------+-----+-------------------+-------
+ CPDEXXII |    2023 |  84 |     MUTTON MASALA | INDIA
+ CPDEGGII |    2022 |  52 |    BRIYANI MASALA | INDIA
+ CPDEJJII |    2023 |  65 |    CHICKEN MASALA | INDIA
+ CPDESSII |    2024 |  48 | EGG KURUMA MASALA | INDIA
+ CPDEKKII |    2022 |  66 | FISH CURRY MASALA | INDIA
+ CPDELLII |    2025 |  77 | CHILLI CHICKEN 65 | INDIA
+ CPDERRII |    2026 |  33 |   FISH FRY MASALA | INDIA
+
+(7 rows)
